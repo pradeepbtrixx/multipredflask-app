@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %} MAIN PAGE {% endblock %}
+
+{% block ah %}
+<h1>HI USER THIS IS OUR WELCOME PAGE </h1>
+<h2>CLICK THE BELOW OPTIONS TO NAVIGATE OVER PREDICTION PAGE </h2>
+
+{% endblock %}
+	
+{% block body %}
+	<form action="{{ url_for('salpre') }}">
+		<br>
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> 	SALARY PREDICTION </button>
+		
+	</form>
+	
+	<form action="{{ url_for('lungcpre') }}">
+		<br>
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> LUNG-CANCER  PREDICTION </button>
+		
+	</form>
+
+	<form action="{{ url_for('BNA') }}">
+		<br>
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large">
+			BANK-NOTE-AUTHENTICATION
+		</button>
+		
+	</form>
+	
+
+{% endblock %}
+

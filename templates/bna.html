@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %} BANK-NOTE-AUTHENTICATION {% endblock %}
+
+{% block ah %}<h1> BANK-NOTE-AUTHENTICATION </h1>{% endblock %}
+{% block body %}
+	<form action="{{ url_for('bnapre') }}"method="post">
+		
+		variance:<input type="text" name="variance"/>
+		<br>
+		<br>
+		skewness :<input type="text" name="skewness"/>
+		<br>
+		<br>
+		curtosis:<input type="text" name="curtosis"/>
+		<br>
+		<br>
+		entropy:<input type="text" name="entropy"/>
+		<br>
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> PREDICT </button>
+		
+	</form>
+	<br>
+	{{ prediction_text }}
+	<form action="{{ url_for('greet') }}">
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> BACK TO HOME PAGE </button>
+	</form>
+{% endblock %}
+
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %} SALARY PREDICTION {% endblock %}
+
+{% block ah %}
+<h1> SALARY PREDICTION </h1>
+<P>This app predicts the salary based on the age/test_score/interview_score </P>
+{% endblock %}
+{% block body %}
+	<form action="{{ url_for('salpredict') }}"method="post">
+		AGE:<input type="text" name="age"/>
+		<br>
+		<br>
+		TEST_SCORE(out of 10) :<input type="text" name="test_score"/>
+		<br>
+		<br>
+		INTERVIEW_SCORE(out of 10) :<input type="text" name="interview_score"/>
+		<br>
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> PREDICTION </button>
+		
+	</form>
+	<br>
+	{{prediction_text}}
+	<form action="{{ url_for('greet') }}">
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> BACK TO HOME PAGE </button>
+	</form>
+{% endblock %}
+
+</html>

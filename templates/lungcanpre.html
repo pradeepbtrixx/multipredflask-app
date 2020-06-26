@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %} LUNG CANCER PREDICTION {% endblock %}
+
+{% block ah %}<h1>LUNG CANCER PREDICTION </h1>{% endblock %}
+{% block body %}
+	<form action="{{ url_for('lungpredict') }}"method="post">
+		
+		AGE:<input type="text" name="age"/>
+		<br>
+		<br>
+		Smokes :<input type="text" name="Smokes"/>
+		<br>
+		<br>
+		Alkhol:<input type="text" name="Alkhol"/>
+		<br>
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> PREDICT </button>
+		
+	</form>
+	<br>
+	{{ prediction_text }}
+	<form action="{{ url_for('greet') }}">
+		<br>
+		<button type="submit" class="btn btn-primary btn-block btn-large"> BACK TO HOME PAGE </button>
+	</form>
+{% endblock %}
+
+</html>
